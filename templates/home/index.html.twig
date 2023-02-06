@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+  home
+{% endblock %}
+
+{% block content %}
+  <div class="banner">
+    <img class="imgBanner" src="{{ asset('images/home/homeImage.png') }}" alt="banner" />
+    <h1 class="title">Le Lissage & le Soin</h1>
+    <button class="banner-btn">Réservez votre soin</button>
+  </div>
+  <p class="homeParagraphe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+  <div class="imagesHome">
+    <img class="imgHome" src="{{ asset('images/home/ imageHome1.png') }}" alt="img" />
+    <img class="imgHome" src="{{ asset('images/home/imageHome3.png') }}" alt="img" />
+    <img class="imgHome" src="{{ asset('images/home/imageHome2.jpeg') }}" alt="img" />
+  </div>
+  <div class="motLissage">Lissage</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+  liste service admin
+{% endblock %}
+
+{% block content %}
+  <table id="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">titre</th>
+        <th scope="col">description</th>
+        <th scope="col">image</th>
+        <th scope="col">categorie</th>
+        <th scope="col">cheveux longs prix</th>
+        <th scope="col">cheveux moyens prix</th>
+        <th scope="col">cheveux courts prix</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in services %}
+        <tr>
+          <td>{{ service.id }}</td>
+          <td>{{ service.titre }}</td>
+          <td>{{ service.description|slice(0, 100) }} ...</td>
+          <td>
+            <img class="img-thumbnail" src="{{ asset('images/service/' ~ service.image) }}" alt="{{ service.titre }}" />
+          </td>
+          <td>{{ service.categorie.nom }}</td>
+          <td>{{ service.cheveauxLongsPrix }}</td>
+          <td>{{ service.cheveuxMoyensPrix }}</td>
+          <td>{{ service.CheveuxCourtsPrix }}</td>
+          <td>
+            <a href="{{ path('admin_services_details', { id: service.id }) }}"><i class="fas fa-eye mx-1 text-primary"></i></a>
+            <a href="{{ path('admin_service_update', { id: service.id }) }}"><i class="fas fa-edit mx-1 text-success"></i></a>
+            <a href="{{ path('admin_service_delete', { id: service.id }) }}" onclick="return confirm('êtes vous sûr de vouloir supprimer le produit ?')"><i class="fas fa-trash mx-1 text-danger"></i></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

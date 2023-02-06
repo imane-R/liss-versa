@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+  details du sevice {{ service.titre }}
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8 col-lg-8 col-sm-12">
+      <h1>Detail du service n° {{ service.id }}</h1>
+      <h5><strong>titre :</strong> {{ service.titre }}</h5>
+      <h5><strong>categorie :</strong> {{ service.categorie.nom }}</h5>
+      <h5><strong>cheveux courts prix :</strong>{{ service.cheveuxCourtsPrix }} €</h5>
+      <h5><strong>cheveux moyens prix :</strong>{{ service.cheveuxMoyensPrix }} €</h5>
+      <h5><strong>cheveux longs prix :</strong>{{ service.cheveauxLongsPrix }} €</h5>
+      <p>
+        <strong>description :</strong> {{ service.description }}
+      </p>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12">
+      <img class="img-fluid" src="{{ asset('images/service/' ~ service.image) }}" alt="{{ service.titre }}" />
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap");
+
+:root {
+  --secondary-color: #60bedd;
+  --primary-color: #ef7ec5;
+}
+body {
+  font-family: "Crimson Text";
+}
+header {
+  margin-bottom: 20px;
+}
+li {
+  list-style: none;
+}
+.nav-item {
+  font-size: 25px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  font-size: 14px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+.nav {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+.phoneNum {
+  display: flex;
+  justify-content: end;
+  color: var(--secondary-color);
+}
+.banner {
+  position: relative;
+}
+.imgBanner {
+  width: 100%;
+}
+.title {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  color: var(--secondary-color);
+  border-bottom: 4px solid var(--primary-color);
+}
+.banner-btn {
+  position: absolute;
+  top: 56%;
+  left: 10%;
+  height: 42px;
+  width: fit-content;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: large;
+  cursor: pointer;
+}
+.homeParagraphe {
+  font-size: 20px;
+  max-width: 70%;
+  margin: auto;
+  text-align: center;
+  padding: 40px;
+}
+.imagesHome {
+  display: flex;
+  justify-content: space-between;
+}
+.imgHome {
+  width: 33%;
+  height: 563px;
+  object-fit: cover;
+}
+.motLissage {
+  transform: rotate(90deg);
+  font-size: 171px;
+  position: absolute;
+  top: 87%;
+  color: var(--secondary-color);
+  opacity: 0.35;
+}
+#table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table td,
+#table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#table tr:hover {
+  background-color: #ddd;
+}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--secondary-color);
+  color: white;
+}
+.buttonForm {
+  background-color: var(--primary-color);
+  border: none;
+  height: 45px;
+  width: 150px;
+  color: white;
+}
+.inputForm {
+  height: 40px;
+  width: 477px;
+  margin: 10px;
+  margin: auto;
+}
+main {
+  text-align: center;
+}
+label {
+  font-size: 20px;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}

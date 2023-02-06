@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  <header>
+    <div class="phoneNum">
+      <i class="fa-solid fa-phone"></i> &nbsp; 01 23 45 67 89
+    </div>
+    <nav class="navbar">
+      <a class="logo" href="#">Liss&Versa</a>
+
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_home') }}">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lissages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Produits</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Coiffeuses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Contact</a>
+        </li>
+        {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+          </li>
+        {% endif %}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_ADMIN') %}
+          <li class="nav-item dropdown">
+            <a class="dropdown" href="#" role="button">Admin</a>
+            <ul class="dropdown-content">
+              <li>
+                <a class="dropdown-item" href="{{ path('admin_add_categorie') }}">Ajout Categorie</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{ path('admin_categories') }}">Gestion Categories</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{ path('admin_add_service') }}">Ajout services</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{ path('admin_services') }}">Gestion services</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{ path('admin_add_produits') }}">Ajout produits</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{ path('app_register') }}">Add new admin</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Gestion Produis</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <main class="container mb-5 pd-5">
+    {% block content %}
+
+    {% endblock %}
+  </main>
+  <footer class="bg-light"></footer>
+{% endblock %}
