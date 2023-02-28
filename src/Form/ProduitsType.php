@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Produits;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -15,7 +16,11 @@ class ProduitsType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('description')
+            ->add('description', CKEditorType::class, [
+                'config' => [
+                    'uiColor' => '#FFFFFF',
+                ]
+            ])
             ->add('imageForm', FileType::class, [
                 'mapped' => false,
                 'required' => false,
@@ -23,7 +28,6 @@ class ProduitsType extends AbstractType
             ])
             ->add('prix')
             ->add('envoyer', SubmitType::class);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

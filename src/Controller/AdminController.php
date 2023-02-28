@@ -62,6 +62,17 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $form->get('imageForm')->getData();
+            if ($file) {
+                $fileName = $slugger->slug($categorie->getNom()) . uniqid() . '.' . $file->guessExtension();
+                try {
+                    //pn cherche à enregistrer l'image du formulaire dans notre dossier paramétré dans service.yaml "service_images" sous le nom q'on a crée "$titre"
+                    $file->move($this->getParameter('categories_images'), $fileName);
+                } catch (FileException $e) {
+                    //gérer les exceptions en cas d'erreur durant l'upload d'un article
+                }
+                $categorie->setImage($fileName);
+            }
 
             $slug =  $slugger->slug($categorie->getNom());
             $categorie->setSlug($slug);

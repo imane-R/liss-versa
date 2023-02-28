@@ -1,11 +1,13 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-  ajout d'un produit
+  Ajout d'un produit
 {% endblock %}
 
 {% block content %}
-  <h1>ajout d'un produit</h1>
+  <div class="container mb-10 mt-1">
+    <h1>ajout d'un produit</h1>
 
-  {{ form(formProduits) }}
+    {{ form(formProduits) }}
+  </div>
 {% endblock %}

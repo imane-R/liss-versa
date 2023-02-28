@@ -6,6 +6,7 @@
 parameters:
   service_images: "%kernel.project_dir%/public/images/service"
   produits_images: "%kernel.project_dir%/public/images/produits"
+  categories_images: "%kernel.project_dir%/public/images/categories"
 
 services:
   # default configuration for services in *this* file

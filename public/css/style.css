@@ -3,22 +3,40 @@
 :root {
   --secondary-color: #60bedd;
   --primary-color: #ef7ec5;
+  --footer-bg-color: #f1f1f1;
 }
 body {
-  font-family: "Crimson Text";
+  font-family: "Crimson Text" !important;
 }
+.bodyContent {
+  margin: 5%;
+}
+/************************************************************************************/
+/************************************** base ***********************************************/
+/************************************************************************************/
+
+/************************************** header ***********************************************/
+
 header {
   margin-bottom: 20px;
+}
+.logo {
+  font-size: 2.25rem !important;
+  color: var(--secondary-color) !important ;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 li {
   list-style: none;
 }
-.nav-item {
+
+.nav-item-css {
   font-size: 25px;
 }
-.dropdown {
+.dropdown-css {
   position: relative;
   display: inline-block;
+  font-size: 25px;
 }
 
 .dropdown-content {
@@ -36,16 +54,18 @@ li {
   display: block;
 }
 a {
-  text-decoration: none;
-  color: black;
+  text-decoration: none !important;
+  color: black !important;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
+.navbar-css {
+  display: flex !important;
+  justify-content: space-between !important;
   color: black;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
-.nav {
+.nav-css {
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -55,24 +75,86 @@ a {
   display: flex;
   justify-content: end;
   color: var(--secondary-color);
+  font-size: 24px;
 }
+.navbar > .container-fluid {
+  justify-content: space-between !important;
+}
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+.phoneNum-mobile {
+  display: none;
+}
+/* Styles for mobile */
+@media (max-width: 990px) {
+  .phoneNum-mobile {
+    display: flex;
+    justify-content: end;
+    color: var(--secondary-color);
+    font-size: 17px;
+    margin-right: 5px;
+  }
+  .navbar-toggler-icon {
+    color: var(--secondary-color) !important;
+  }
+  .phoneNum {
+    display: none;
+  }
+}
+
+/************************************** footer ***********************************************/
+
+footer {
+  display: flex;
+  background-color: var(--footer-bg-color);
+  padding: 2%;
+}
+footer ul {
+  margin: auto;
+  margin-top: 0;
+}
+footer li {
+  font-size: 19px;
+}
+.footer-title {
+  color: var(--secondary-color);
+  font-size: 28px;
+}
+/* Styles pour les écrans de taille moyenne */
+@media (max-width: 680px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer ul {
+    margin: 0;
+  }
+}
+
+/******************************************************************************/
+/************************************** home page ***********************************************/
+/*****************************************************************************/
+
+/************************************** banner ***********************************************/
 .banner {
   position: relative;
 }
 .imgBanner {
   width: 100%;
 }
-.title {
+.title-btn-banner {
   position: absolute;
   top: 40%;
   left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.title {
   color: var(--secondary-color);
   border-bottom: 4px solid var(--primary-color);
 }
 .banner-btn {
-  position: absolute;
-  top: 56%;
-  left: 10%;
   height: 42px;
   width: fit-content;
   background-color: var(--primary-color);
@@ -81,6 +163,8 @@ a {
   font-size: large;
   cursor: pointer;
 }
+
+/************************************** sections of home ***********************************************/
 .homeParagraphe {
   font-size: 20px;
   max-width: 70%;
@@ -89,24 +173,89 @@ a {
   padding: 40px;
 }
 .imagesHome {
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
+
 .imgHome {
   width: 33%;
   height: 563px;
   object-fit: cover;
 }
 .motLissage {
+  position: absolute;
   transform: rotate(90deg);
   font-size: 171px;
-  position: absolute;
-  top: 87%;
+  top: -6%;
   color: var(--secondary-color);
   opacity: 0.35;
 }
+
+.imgHomeProducts {
+  height: 355px;
+  width: 91%;
+  object-fit: cover;
+  margin-top: 5%;
+}
+
+.service-home-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5%;
+}
+.container-service-card {
+  border: solid 1px black;
+  width: 28%;
+  padding: 6px;
+  margin: 2%;
+}
+.imgDryer {
+  width: 100%;
+  height: 268px;
+  object-fit: cover;
+}
+.card-title {
+  font-size: 27px;
+  margin: 0;
+}
+.card-btn {
+  height: 42px;
+  width: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: large;
+  cursor: pointer;
+}
+
+/* Styles pour les écrans de taille moyenne */
+@media (max-width: 680px) {
+  .imagesHome {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .homeParagraphe {
+    padding: 0;
+    padding-bottom: 10px;
+  }
+  .imgHome {
+    width: 100%;
+    height: 444px;
+    margin-top: 2%;
+  }
+  .motLissage {
+    left: -36%;
+  }
+  .container-service-card {
+    min-width: 339px;
+  }
+}
+
+/************************************** forms style  ***********************************************/
+
 #table {
-  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
