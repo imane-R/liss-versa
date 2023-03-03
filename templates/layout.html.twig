@@ -13,8 +13,9 @@
             <li class="nav-item-css nav-item">
               <a class="nav-link-css nav-link active" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
             </li>
-            <li class="nav-item-css nav-item">
-              <a class="nav-link-css nav-link" href="#">Lissages</a>
+            <li class="nav-item-css nav-item dropdown">
+              <a class="nav-link-css nav-link dropdown-css" href="#" role="button">Lissages</a>
+              <ul class="dropdown-content">{{ render(controller('App\\Controller\\ServicesController::showAllService')) }}</ul>
             </li>
             <li class="nav-item-css nav-item">
               <a class="nav-link-css nav-link-css nav-link">Produits</a>
@@ -81,7 +82,8 @@
         <a class="footerText" href="#">Découvrez tout nos soins</a>
       </li>
       <li>
-        <a class="footerText" href="#">Nos méthodes de lissage</a>
+        <p class="footerText">Nos méthodes de lissage</p>
+        {{ render(controller('App\\Controller\\ServicesController::showAllService')) }}
       </li>
     </ul>
     <ul class="nav-footer">

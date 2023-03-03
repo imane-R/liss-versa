@@ -121,6 +121,9 @@ footer li {
   color: var(--secondary-color);
   font-size: 28px;
 }
+.footerText {
+  margin: 0;
+}
 /* Styles pour les écrans de taille moyenne */
 @media (max-width: 680px) {
   footer {
@@ -303,4 +306,49 @@ label {
 .formContainer {
   display: flex;
   flex-direction: column;
+}
+
+/******************************************************************************/
+/************************************** Lissage page ***********************************************/
+/*****************************************************************************/
+.title-lissage-page-banner {
+  position: absolute;
+  top: 40%;
+  left: 52%;
+}
+.service-description-container {
+  width: 65%;
+  width: 85%;
+  border: 5px solid var(--primary-color);
+  border-left: none;
+  margin-top: 5%;
+  padding: 6%;
+  padding-right: 20%;
+  position: relative;
+  margin-bottom: 5%;
+}
+.prix-container {
+  height: 180px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0;
+}
+.serivce-prix {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 7px;
+  width: 219px;
+  font-size: 25px;
+}
+.img-service {
+  position: absolute;
+  height: 300px;
+  top: 250px;
+  right: -157px;
+}
+.btn-page-lissage {
+  padding: 2px 16px 5px 16px;
+  position: absolute;
+  bottom: -23px;
 }

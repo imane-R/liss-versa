@@ -9,8 +9,6 @@
     <thead>
       <tr>
         <th>Nom</th>
-        <th>description</th>
-        <th>image</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -18,10 +16,6 @@
       {% for categorie in categories %}
         <tr>
           <td>{{ categorie.nom }}</td>
-          <td>{{ categorie.description }}</td>
-          <td>
-            <img class="img-thumbnail" src="{{ asset('images/categories/' ~ categorie.image) }}" alt="{{ categorie.nom }}" />
-          </td>
 
           <td>
             <a href="{{ path('admin_categorie_update', { slug: categorie.slug }) }}"><i class="fas fa-edit mx-1 text-primary"></i></a>

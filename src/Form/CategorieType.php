@@ -22,22 +22,6 @@ class CategorieType extends AbstractType
                     'template' => 'categorie/form.html.twig'
                 ]
             ])
-            ->add('description', null, [
-                'attr' => [
-                    'class' => 'inputForm'
-                ],
-                'row_attr' => [
-                    'template' => 'categorie/form.html.twig'
-                ]
-            ])
-            ->add('imageForm', FileType::class, [
-                'mapped' => false,
-                'required' => false,
-                'label' => 'Ajouter une image',
-                'attr' => [
-                    'class' => 'inputForm'
-                ]
-            ])
             ->add('envoyer', SubmitType::class, [
                 'attr' => [
                     'class' => 'buttonForm'
