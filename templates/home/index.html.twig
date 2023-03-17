@@ -6,18 +6,18 @@
 
 {% block content %}
   <div class="banner">
-    <img class="imgBanner" src="{{ asset('images/home/homeImage.png') }}" alt="banner" />
+    <img class="imgBanner" src="{{ asset('images/lissagePage/page-lissage-banner-img.png') }}" alt="banner" />
     <div class="title-btn-banner">
       <h1 class="title">Le Lissage & le Soin</h1>
-      <button class="banner-btn">Réservez votre soin</button>
+      <a class="banner-btn"  href="{{ path('app_contact') }}">Réservez votre soin</a>
     </div>
   </div>
   <div class="bodyContent">
     <p class="homeParagraphe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
     <div class="imagesHome">
-      <img class="imgHome" src="{{ asset('images/home/imageHome3.png') }}" alt="img" />
-      <img class="imgHome" src="{{ asset('images/home/imageHome1.png') }}" alt="img" />
+      <img class="imgHome" src="{{ asset('images/home/imageHome3.jpeg') }}" alt="img" />
+      <img class="imgHome" src="{{ asset('images/home/imageHome1.jpeg') }}" alt="img" />
       <img class="imgHome" src="{{ asset('images/home/imageHome2.jpeg') }}" alt="img" />
       <div class="motLissage">Lissage</div>
     </div>
@@ -25,23 +25,47 @@
       <img class="imgHomeProducts" src="{{ asset('images/home/imageHomeProducts.png') }}" alt="image of product" />
     </div>
     <div class="service-home-container">
-    <div class="container-service-card">
+    <div class="card container-service-card" >
+  <img src="{{ asset('images/home/soin.jpeg') }}" class="card-img-top img-card-home" alt="soins cheveux">
+  <div class="card-body">
+    <h5 class="card-title">Soin des cheveux</h5>
+    <p class="card-text">Applications de lotion et autres soins.</p>
+    <a href="{{ path('app_contact') }}" class="btn btn-card-home">Réservez</a>
+  </div>
+</div>
+<div class="card container-service-card" >
+  <img src="{{ asset('images/home/lissage.jpeg') }}" class="card-img-top img-card-home" alt="Lissages">
+  <div class="card-body">
+    <h5 class="card-title">Lissages</h5>
+    <p class="card-text">Choisissez votre technique de lissage.</p>
+    <a href="{{ path('app_contact') }}" class="btn btn-card-home">Réservez</a>
+  </div>
+</div>
+<div class="card container-service-card" >
+  <img src="{{ asset('images/home/traitment.jpeg') }}" class="card-img-top img-card-home" alt="Traitements">
+  <div class="card-body">
+    <h5 class="card-title">Traitements</h5>
+    <p class="card-text">Décoloration ou rajeunissement du cuir chevelu.</p>
+    <a href="{{ path('app_contact') }}" class="btn  btn-card-home">Réservez</a>
+  </div>
+</div>
+    {# <div class="container-service-card">
     <img class="imgDryer" src="{{ asset('images/home/soin.jpeg') }}" alt="dryer"/>
     <p class="card-title">Soin des cheveux</p>
     <p>Applications de lotion et autres soins</p>
-    <button class="card-btn">Réservez</button>
-    </div>
-    <div class="container-service-card">
+    <a class="btnCard" href="{{ path('app_contact') }}">Réservez</a>
+    </div> #}
+    {# <div class="container-service-card">
     <img class="imgDryer" src="{{ asset('images/home/lissage.jpeg') }}" alt="dryer"/>
     <p class="card-title">Lissages</p>
     <p>Choisissez votre technique de lissage</p>
-    <button class="card-btn">Réservez</button>
+    <a class="btnCard" href="{{ path('app_contact') }}">Réservez</a>
     </div>
         <div class="container-service-card">
     <img class="imgDryer" src="{{ asset('images/home/traitment.jpeg') }}" alt="dryer"/>
     <p class="card-title">Traitements</p>
     <p>Décoloration ou rajeunissement du cuir chevelu</p>
-    <button class="card-btn">Réservez</button>
-    </div>
+    <a class="btnCard" href="{{ path('app_contact') }}">Réservez</a>
+    </div> #}
   </div>
 {% endblock %}

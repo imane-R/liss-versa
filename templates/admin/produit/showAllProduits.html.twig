@@ -21,7 +21,7 @@
         <tr>
           <td>{{ produit.id }}</td>
           <td>{{ produit.titre }}</td>
-          <td>{{ produit.description|slice(0, 100) }} ...</td>
+          <td>{{ produit.description|slice(0, 100)|raw }} ...</td>
           <td>
             <img class="" src="{{ asset('images/produits/' ~ produit.image) }}" alt="{{ produit.titre }}" />
           </td>

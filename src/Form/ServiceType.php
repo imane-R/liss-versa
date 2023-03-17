@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Service;
 use App\Entity\Categorie;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,24 +22,23 @@ class ServiceType extends AbstractType
                     'class' => 'inputForm'
                 ]
             ])
-            ->add('description', null, [
-                'attr' => [
-                    'class' => 'inputForm'
+            ->add('description', CKEditorType::class, [
+                'config' => [
+                    'uiColor' => '#FFFFFF',
                 ]
             ])
             ->add('imageForm', FileType::class, [
                 'mapped' => false,
                 'required' => false,
-                'label' => 'Ajouter une image',
+                'label' => 'Image',
                 'attr' => [
                     'class' => 'inputForm'
                 ]
             ])
             ->add('categorie', EntityType::class, [
-                'label' => 'Choisissez un categorie',
+                'label' => 'Categorie',
                 'class' => Categorie::class,
                 'choice_label' => 'nom',
-                'expanded' => true,
                 'multiple' => false,
             ])
             ->add('cheveuxCourtsPrix', null, [

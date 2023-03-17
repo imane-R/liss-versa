@@ -24,7 +24,7 @@
         <tr>
           <td>{{ service.id }}</td>
           <td>{{ service.titre }}</td>
-          <td>{{ service.description|slice(0, 100) }} ...</td>
+          <td>{{ service.description|slice(0, 100)|raw }} ...</td>
           <td>
             <img class="img-thumbnail" src="{{ asset('images/service/' ~ service.image) }}" alt="{{ service.titre }}" />
           </td>

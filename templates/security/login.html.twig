@@ -5,28 +5,35 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    {% if error %}
-      <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+  <div class="banner">
+    <img class="imgBanner" src="{{ asset('images/lissagePage/page-lissage-banner-img.png') }}" alt="banner" />
+    <div class="title-btn-banner">
+      <h1 class="title">Connectez-vous</h1>
+    </div>
+  </div>
+  <div class="container md-7 ">
+    <form method="post" class="form-signin">
+      {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+      {% endif %}
 
-    {% if app.user %}
-      <div class="mb-3">
-        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+      {% if app.user %}
+        <div class="mb-3">
+          You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+      {% endif %}
+
+      <div class="form-label-group">
+        <label for="inputEmail">Adresse e-mail</label>
+        <input type="email" value="{{ last_username }}" name="email" class="form-control" placeholder="Email address" autocomplete="email" required autofocus />
       </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <div class="formContainer">
-      <label for="inputEmail">Email</label>
-      <input type="email" value="{{ last_username }}" name="email" class="inputForm" autocomplete="email" required autofocus />
-      <label for="inputPassword">Password</label>
-      <input type="password" name="password" class="inputForm" autocomplete="current-password" required />
+      <div class="form-label-group">
+        <label for="inputPassword">Mot de passe</label>
+        <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="current-password" required />
+      </div>
 
       <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-    </div>
-
-    {#
+      {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
 
@@ -37,6 +44,7 @@
         </div>
     #}
 
-    <button class="buttonForm" type="submit">Sign in</button>
-  </form>
+      <button class="btn btn-lg btn-primary btn-block buttonForm" type="submit">Sign in</button>
+    </form>
+  </div>
 {% endblock %}

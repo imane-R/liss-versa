@@ -2,7 +2,7 @@
 {% block body %}
   <header>
     <div class="phoneNum-mobile">
-      <i class="fa-solid fa-phone"></i> &nbsp; 01 23 45 67 89
+      <i class="fa-solid fa-phone"></i> &nbsp; 07 83 55 57 49
     </div>
     <nav class="navbar-css navbar navbar-expand-lg">
       <div class="container-fluid">
@@ -14,17 +14,18 @@
               <a class="nav-link-css nav-link active" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
             </li>
             <li class="nav-item-css nav-item dropdown">
-              <a class="nav-link-css nav-link dropdown-css" href="#" role="button">Lissages</a>
-              <ul class="dropdown-content">{{ render(controller('App\\Controller\\ServicesController::showAllService')) }}</ul>
+              <a class="nav-link-css nav-link dropdown-css" role="button">Lissages</a>
+              <ul class="dropdown-content">{{ render(controller('App\\Controller\\ServicesController::showAllServiceLissage')) }}</ul>
+            </li>
+            <li class="nav-item-css nav-item dropdown">
+              <a class="nav-link-css nav-link dropdown-css" role="button">Soins</a>
+              <ul class="dropdown-content">{{ render(controller('App\\Controller\\ServicesController::showAllServiceSion')) }}</ul>
             </li>
             <li class="nav-item-css nav-item">
-              <a class="nav-link-css nav-link-css nav-link">Produits</a>
+              <a class="nav-link-css nav-link-css nav-link" href="{{ path('app_traitements') }}">Traitements</a>
             </li>
             <li class="nav-item-css nav-item">
-              <a class="nav-link-css nav-link">Coiffeuses</a>
-            </li>
-            <li class="nav-item-css nav-item">
-              <a class="nav-link-css nav-link">Contact</a>
+              <a class="nav-link-css nav-link" href="{{ path('app_contact') }}">Rdv&Contact</a>
             </li>
             {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
               <li class="nav-item-css nav-item">
@@ -51,10 +52,13 @@
                     <a class="dropdown-item" href="{{ path('admin_add_produits') }}">Ajout produits</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="{{ path('app_register') }}">Add new admin</a>
+                    <a class="dropdown-item" href="{{ path('admin_produits') }}">Gestion Produis</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Gestion Produis</a>
+                    <a class="dropdown-item" href="{{ path('app_register') }}">Ajout un admin</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{{ path('app_user') }}">Gestion admin</a>
                   </li>
                 </ul>
               </li>
@@ -64,7 +68,7 @@
             {% endif %}
           </ul>
         </div>
-        <span class="navbar-text phoneNum"><i class="fa-solid fa-phone"></i> &nbsp; 01 23 45 67 89</span>
+        <span class="navbar-text phoneNum"><i class="fa-solid fa-phone"></i> &nbsp; 07 83 55 57 49</span>
       </div>
     </nav>
   </header>
@@ -83,7 +87,7 @@
       </li>
       <li>
         <p class="footerText">Nos méthodes de lissage</p>
-        {{ render(controller('App\\Controller\\ServicesController::showAllService')) }}
+        {{ render(controller('App\\Controller\\ServicesController::showAllServiceLissage')) }}
       </li>
     </ul>
     <ul class="nav-footer">
@@ -94,7 +98,7 @@
         Samedi 10h à 19h
       </li>
       <li class="footerText">
-        <i class="fa-solid fa-phone"></i> &nbsp; 01 23 45 67 89
+        <i class="fa-solid fa-phone"></i> &nbsp; 07 83 55 57 49
       </li>
       <li class="footerText">
         <i class="fa-solid fa-envelope"></i> &nbsp; contact@liss&versa.fr
@@ -103,8 +107,8 @@
     <ul class="nav-footer">
       <li class="footer-title">Adresse</li>
       <li class="footerText">
-        <i class="fa-solid fa-location-dot"></i> &nbsp; 28b rue xxxx<br />
-        XXXXX Antony
+        <i class="fa-solid fa-location-dot"></i> &nbsp; 7 Rue des Tuilots <br />
+        94290 Villeneuve Le Roi
       </li>
     </ul>
   </footer>

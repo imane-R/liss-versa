@@ -11,7 +11,7 @@
       <h5><strong>titre :</strong> {{ produit.titre }}</h5>
       <h5><strong>prix à partir de :</strong>{{ produit.prix }} €</h5>
       <p>
-        <strong>description :</strong> {{ produit.description }}
+        <strong>description :</strong> {{ produit.description|raw }}
       </p>
     </div>
     <div class="col-md-4 col-lg-4 col-sm-12">

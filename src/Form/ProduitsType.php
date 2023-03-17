@@ -27,7 +27,9 @@ class ProduitsType extends AbstractType
                 'label' => 'Ajouter une image',
             ])
             ->add('prix')
-            ->add('envoyer', SubmitType::class);
+            ->add('envoyer', SubmitType::class , ['attr' => [
+                'class' => 'buttonForm'
+            ]]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

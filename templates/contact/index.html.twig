@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+  Contact
+{% endblock %}
+
+{% block content %}
+  <div class="container mb-7 mt-7 rdvSquare">
+    <h1>Rendez-Vous uniquement par téléphone</h1>
+    <h2 class="numPhone"><i class="fa-solid fa-phone"></i> &nbsp; 07 83 55 57 49</h2>
+  </div>
+
+  <div class="container mb-7 mt-7 contactForm">
+    <h1>Contactez-Nous</h1>
+    {{ form(form) }}
+  </div>
+{% endblock %}

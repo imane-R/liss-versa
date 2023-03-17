@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+  {{ service.titre }}
+{% endblock %}
+
+{% block content %}
+  <div class="banner">
+    <img class="imgBanner" src="{{ asset('images/lissagePage/Femme-se-faisant-lisser-les-cheveux.jpeg') }}" alt="banner" />
+    <h1 class="title title-lissage-page-banner">{{ service.titre }}</h1>
+  </div>
+  <div class="service-description-container">
+    <h2>{{ service.titre }}</h2>
+    <img class="img-service" src="{{ asset('images/service/' ~ service.image) }}" alt="service" />
+    <p>{{ service.description|raw }}</p>
+    <ul class="prix-container">
+      <li class="serivce-prix">Cheveux courts {{ service.CheveuxCourtsPrix }} €</li>
+      <li class="serivce-prix">Cheveux moyens {{ service.cheveuxMoyensPrix }} €</li>
+      <li class="serivce-prix">Cheveaux longs {{ service.cheveauxLongsPrix }} €</li>
+    </ul>
+    <a class="banner-btn btn-page-lissage" href="{{ path('app_contact') }}">Prendre rendez-vous</a>
+  </div>
+{% endblock %}

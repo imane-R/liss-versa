@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+  Traitements
+{% endblock %}
+
+{% block content %}
+  <div class="banner">
+    <img class="imgBanner" src="{{ asset('images/lissagePage/page-lissage-banner-img.png') }}" alt="banner" />
+    <h1 class="title title-lissage-page-banner">Traitements</h1>
+  </div>
+  <div class="example-wrapper">
+    <div class="container container-products">
+      {% for traitement in traitements %}
+        <div class="card mb-3 product-card" style="max-width: 640px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{ asset('images/produits/' ~ traitement.image) }}" class="img-fluid rounded-start" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ traitement.titre }}</h5>
+                <p class="card-text">{{ traitement.description|raw }}</p>
+                <p class="card-text">
+                  <small class="price-product">Prix à partir de {{ traitement.prix }}€</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
