@@ -21,6 +21,10 @@
               <a class="nav-link-css nav-link dropdown-css" role="button">Soins</a>
               <ul class="dropdown-content">{{ render(controller('App\\Controller\\ServicesController::showAllServiceSion')) }}</ul>
             </li>
+            <li class="nav-item-css nav-item dropdown">
+              <a class="nav-link-css nav-link dropdown-css" role="button">Exclusivité</a>
+              <ul class="dropdown-content">{{ render(controller('App\\Controller\\ServicesController::showAllServiceExclusivité')) }}</ul>
+            </li>
             <li class="nav-item-css nav-item">
               <a class="nav-link-css nav-link-css nav-link" href="{{ path('app_traitements') }}">Traitements</a>
             </li>

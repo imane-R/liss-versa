@@ -1,0 +1,7 @@
+{% for service in services %}
+  {% if service.Categorie.nom == 'Exclusivité' %}
+    <li>
+      <a href="{{ path('app_service', { slug: service.slug }) }}">{{ service.titre }}</a>
+    </li>
+  {% endif %}
+{% endfor %}

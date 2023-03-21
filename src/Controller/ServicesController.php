@@ -34,4 +34,12 @@ class ServicesController extends AbstractController
             'services' =>  $services
         ]);
     }
+    public function showAllServiceExclusivité(ServiceRepository $repo): Response
+    {
+        $services = $repo->findAll();
+
+        return $this->render("fragments/_servicesCategorieExclusivité.html.twig", [
+            'services' =>  $services
+        ]);
+    }
 }

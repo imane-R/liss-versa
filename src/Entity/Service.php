@@ -29,9 +29,6 @@ class Service
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $categorie = null;
 
-    #[ORM\OneToMany(mappedBy: 'service', targetEntity: PriceByHair::class)]
-    private Collection $priceByHairs;
-
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
@@ -44,10 +41,6 @@ class Service
     #[ORM\Column(nullable: true)]
     private ?float $cheveauxLongsPrix = null;
 
-    public function __construct()
-    {
-        $this->priceByHairs = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -101,37 +94,6 @@ class Service
 
         return $this;
     }
-
-    /**
-     * @return Collection<int, PriceByHair>
-     */
-    public function getPriceByHairs(): Collection
-    {
-        return $this->priceByHairs;
-    }
-
-    public function addPriceByHair(PriceByHair $priceByHair): self
-    {
-        if (!$this->priceByHairs->contains($priceByHair)) {
-            $this->priceByHairs->add($priceByHair);
-            $priceByHair->setService($this);
-        }
-
-        return $this;
-    }
-
-    public function removePriceByHair(PriceByHair $priceByHair): self
-    {
-        if ($this->priceByHairs->removeElement($priceByHair)) {
-            // set the owning side to null (unless already changed)
-            if ($priceByHair->getService() === $this) {
-                $priceByHair->setService(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getSlug(): ?string
     {
         return $this->slug;
