@@ -6,7 +6,11 @@
 
 {% block content %}
   <div class="container mb-10 mt-10">
-    <h1>Ajout service</h1>
+    {% if data.url starts with '/add_service' %}
+      <h1>Ajout de service</h1>
+    {% else %}
+      <h1>Mise à jour de cservice</h1>
+    {% endif %}
 
     {{ form(formService) }}
   </div>

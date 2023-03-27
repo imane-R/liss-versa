@@ -36,7 +36,6 @@ class AdminController extends AbstractController
         $categorie = new Categorie;
         $form = $this->createForm(CategorieType::class, $categorie);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             //ajouter un vaaluer dans slug de la database
@@ -46,8 +45,11 @@ class AdminController extends AbstractController
             $repo->save($categorie, 1);
             return $this->redirectToRoute('admin_categories');
         }
+
+        $data = ['url' => '/add_categorie'];
         return $this->render("admin/categorie/form.html.twig", [
-            'formCategorie' => $form->createView()
+            'formCategorie' => $form->createView(),
+            'data' => $data
         ]);
     }
     #[Route('/categories', name: 'categories')]
@@ -56,6 +58,7 @@ class AdminController extends AbstractController
         $categories = $repo->findAll();
         return $this->render("admin/categorie/showAllCategories.html.twig", [
             'categories' => $categories
+
         ]);
     }
 
@@ -72,8 +75,10 @@ class AdminController extends AbstractController
             $repo->save($categorie, 1);
             return $this->redirectToRoute('admin_categories');
         }
+        $data = ['url' => '/categorie_update'];
         return $this->render('admin/categorie/form.html.twig', [
-            'formCategorie' => $form->createView()
+            'formCategorie' => $form->createView(),
+            'data' => $data
         ]);
     }
     #[Route('/categorie_delete_{slug}', name: 'categorie_delete')]
@@ -115,8 +120,10 @@ class AdminController extends AbstractController
             $repo->save($service, 1);
             return $this->redirectToRoute('admin_services');
         }
+        $data = ['url' => '/add_service'];
         return $this->render("admin/services/form.html.twig", [
-            'formService' => $form->createView()
+            'formService' => $form->createView(),
+            'data' => $data,
         ]);
     }
 
@@ -153,8 +160,10 @@ class AdminController extends AbstractController
             $repo->save($service, 1);
             return $this->redirectToRoute('admin_services');
         }
+        $data = ['url' => '/service_update'];
         return $this->render('admin/services/form.html.twig', [
-            'formService' => $form->createView()
+            'formService' => $form->createView(),
+            'data' => $data,
         ]);
     }
 
@@ -207,8 +216,10 @@ class AdminController extends AbstractController
             $repo->save($produits, 1);
             return $this->redirectToRoute('admin_produits');
         }
+        $data = ['url' => '/add_produits'];
         return $this->render("admin/produit/form.html.twig", [
-            'formProduits' => $form->createView()
+            'formProduits' => $form->createView(),
+            'data' => $data
         ]);
     }
 
@@ -243,8 +254,10 @@ class AdminController extends AbstractController
             $repo->save($produit, 1);
             return $this->redirectToRoute('admin_produits');
         }
+        $data = ['url' => '/produit_update'];
         return $this->render('admin/produit/form.html.twig', [
-            'formProduits' => $form->createView()
+            'formProduits' => $form->createView(),
+            'data' => $data,
         ]);
     }
 

@@ -1,12 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-  ajout de categorie
+  categorie
 {% endblock %}
 
 {% block content %}
   <div class="container mb-10">
-  <h1>Ajout categorie</h1>
-  {{ form(formCategorie) }}
+    {% if data.url starts with '/add_categorie' %}
+      <h1>Ajout de categorie</h1>
+    {% else %}
+      <h1>Mise à jour de categorie</h1>
+    {% endif %}
+    {{ form(formCategorie) }}
   </div>
 {% endblock %}
