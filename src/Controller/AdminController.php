@@ -350,6 +350,6 @@ class AdminController extends AbstractController
     {
         $user =  $repo->find($id);
         $repo->remove($user, 1);
-        return $this->redirectToRoute('app_user');
+        return $this->redirectToRoute('admin_app_user');
     }
 }
