@@ -11,6 +11,13 @@ body {
 .bodyContent {
   margin: 5%;
 }
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
 /************************************************************************************/
 /************************************** base ***********************************************/
 /************************************************************************************/
@@ -26,10 +33,6 @@ header {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
-li {
-  list-style: none;
-}
-
 .nav-item-css {
   font-size: 25px;
 }
@@ -52,10 +55,6 @@ li {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-a {
-  text-decoration: none !important;
-  color: black !important;
 }
 
 .navbar-css {
@@ -334,7 +333,7 @@ label {
 }
 
 /******************************************************************************/
-/************************************** Lissage page ***********************************************/
+/************************************** SERVICE ***********************************************/
 /*****************************************************************************/
 .title-lissage-page-banner {
   position: absolute;
@@ -350,7 +349,6 @@ label {
   padding-right: 20%;
   position: relative;
   margin-bottom: 5%;
-  background-color: aliceblue;
 }
 .prix-container {
   height: 180px;
@@ -363,7 +361,7 @@ label {
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
   padding: 7px;
-  width: 219px;
+  width: 243px;
   font-size: 25px;
 }
 .img-service {

@@ -59,10 +59,16 @@
                     <a class="dropdown-item" href="{{ path('admin_produits') }}">Gestion Produis</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="{{ path('admin_app_register') }}">Ajout un admin</a>
+                    <a class="dropdown-item" href="{{ path('app_register') }}">Ajout un admin</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="{{ path('admin_app_user') }}">Gestion admin</a>
+                    <a class="dropdown-item" href="{{ path('app_user') }}">Gestion admin</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{{ path('admin_mletpc_add') }}">Mentions légales | Politiques de confidentialité</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{{ path('admin_mletpc_update') }}">Gestion Mentions légales | Politiques de confidentialité</a>
                   </li>
                 </ul>
               </li>
@@ -106,6 +112,12 @@
       </li>
       <li class="footerText">
         <i class="fa-solid fa-envelope"></i> &nbsp; contact@liss&versa.fr
+      </li>
+      <li class="footerText">
+        <a href="{{ path('app_mentionslegales') }}">Mentions légales</a>
+      </li>
+      <li class="footerText">
+        <a href="{{ path('app_politiquesdeconfidentialite') }}">Politiques de confidentialité</a>
       </li>
     </ul>
     <ul class="nav-footer">

@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+  Politiques de confidentialité
+{% endblock %}
+
+{% block content %}
+  <div class="banner">
+    <img class="imgBanner" src="{{ asset('images/lissagePage/Femme-se-faisant-lisser-les-cheveux.jpeg') }}" alt="banner" />
+    <h1 class="title title-lissage-page-banner">Politiques de confidentialité</h1>
+  </div>
+  <div class="service-description-container">
+    {% for mletpc in mletpcs %}
+      <p>{{ mletpc.politiquesdeconfidentialite|raw }}</p>
+    {% endfor %}
+  </div>
+{% endblock %}

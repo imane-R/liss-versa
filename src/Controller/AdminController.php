@@ -3,14 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Mletpc;
 use App\Entity\Service;
 use App\Entity\Produits;
+use App\Form\MletpcType;
 use App\Entity\Categorie;
 use App\Form\ServiceType;
 use App\Form\ProduitsType;
 use App\Form\CategorieType;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
+use App\Repository\MletpcRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\ProduitsRepository;
 use App\Repository\CategorieRepository;
@@ -351,5 +354,41 @@ class AdminController extends AbstractController
         $user =  $repo->find($id);
         $repo->remove($user, 1);
         return $this->redirectToRoute('admin_app_user');
+    }
+
+    // --------------------------------fin registration ----------------------------------------------//
+    // -------------------------------- Mentions légales | Politiques de confidentialité ----------------------------------------------//
+    #[Route('/mletpc_add', name: 'mletpc_add')]
+    public function addmlandpc(Request $request, MletpcRepository $repo,): Response
+    {
+        $mletpc = new Mletpc;
+        $form = $this->createForm(MletpcType::class, $mletpc);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $repo->save($mletpc, 1);
+            return $this->redirectToRoute('admin_mletpc_add');
+        }
+        return $this->render("admin/mletpc/form.html.twig", [
+            'formMletpc' => $form->createView(),
+        ]);
+    }
+    #[Route('/mletpc_update', name: 'mletpc_update')]
+    public function mletpcupdate(Request $request, MletpcRepository $repo)
+    {
+        $mletpc = $repo->find(1);
+        $form = $this->createForm(MletpcType::class,  $mletpc);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $repo->save($mletpc, 1);
+            return $this->redirectToRoute('admin_mletpc_update');
+        }
+
+        return $this->render('admin/mletpc/form.html.twig', [
+            'formMletpc' => $form->createView(),
+
+        ]);
     }
 }
