@@ -426,15 +426,17 @@ label {
 
 .card {
   margin: 5px !important;
-  max-width: 749px !important;
+  max-width: 616px !important;
 }
 .product-card {
   border: 3px solid var(--primary-color) !important;
+  min-width: 40% !important;
 }
 .container-products {
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
+  flex-wrap: wrap;
 }
 .card-title {
   color: var(--secondary-color);
