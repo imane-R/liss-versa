@@ -3,9 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Produits;
+use App\Entity\Categorie;
 use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -25,6 +27,12 @@ class ProduitsType extends AbstractType
                 'mapped' => false,
                 'required' => false,
                 'label' => 'Ajouter une image',
+            ])
+            ->add('categorie', EntityType::class, [
+                'label' => 'Categorie',
+                'class' => Categorie::class,
+                'choice_label' => 'nom',
+                'multiple' => false,
             ])
             ->add('prix')
             ->add('envoyer', SubmitType::class , ['attr' => [

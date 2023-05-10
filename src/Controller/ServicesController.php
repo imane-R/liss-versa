@@ -29,6 +29,7 @@ class ServicesController extends AbstractController
     public function showAllServiceSion(ServiceRepository $repo): Response
     {
         $services = $repo->findAll();
+       // dd($services);
 
         return $this->render("fragments/_servicesCategorieSion.html.twig", [
             'services' =>  $services

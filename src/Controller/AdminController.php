@@ -230,7 +230,7 @@ class AdminController extends AbstractController
     public function showAllProduits(ProduitsRepository $repo)
     {
         $produits = $repo->findAll();
-        // dd($services);
+        //dd($produits);
         return $this->render("admin/produit/showAllProduits.html.twig", [
             'produits' =>  $produits
         ]);

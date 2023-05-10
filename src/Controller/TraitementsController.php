@@ -12,7 +12,9 @@ class TraitementsController extends AbstractController
     #[Route('/traitements', name: 'app_traitements')]
     public function showAllProducts(ProduitsRepository $repo): Response
     {
+
         $traitements = $repo->findAll();
+        // dd($traitements);
         return $this->render('traitements/index.html.twig', [
             'traitements' => $traitements,
         ]);
