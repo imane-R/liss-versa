@@ -342,7 +342,7 @@ class AdminController extends AbstractController
             );
             $user->setRoles(['ROLE_ADMIN']);
             $repo->save($user, 1);
-            return $this->redirectToRoute('admin_app_user');
+            return $this->redirectToRoute('adminapp_user');
         }
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
